@@ -42,4 +42,10 @@ volume can be controlled with analog
 
 ```
 switch to turn the whole thing on/off can be simply just cutting off the power source.
+    This might be a problem, since...
+* If we terminate the program, memory is wiped, that means the program does not remember the current music index
+* If somehow the above isn't affected, either by only disconnecting the breadboard component,
+  then when we reconnect to the power source, the music will not terminate
+
+In short, this is a horrible idea and should be done via software
 ```
