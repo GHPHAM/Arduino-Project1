@@ -122,7 +122,7 @@ int TakeOnMe[] = { //140
 
 int MyLittlePony[] {
   // Original piece arranged by Huy Pham
-  /*
+  
   // Allegretto (First phrase)
   NOTE_E5, 8, NOTE_G5, 8, NOTE_E5, 8, NOTE_D5, 4, NOTE_G5, -4, // "My little po-ny"
   NOTE_C5, 8, NOTE_D5, 8, NOTE_C5, 8, NOTE_B4, 4, NOTE_G4, -4, // "My little po-ny"
@@ -149,7 +149,7 @@ int MyLittlePony[] {
   // Fifth phrase
   NOTE_C5, 8, NOTE_D5, 4, NOTE_E5, 4, NOTE_C5, 8, // "Sharing kindness"
   NOTE_C5, 8, NOTE_C5, 8, NOTE_G5, 8, NOTE_A5, 4, NOTE_G5, -4, // "It's an easy feat"
-  */
+  
   
   // Sixth phrase
   NOTE_C5, 4, NOTE_D5, 4, NOTE_D5, 4, NOTE_D5, 4, NOTE_E5, 4, NOTE_A5, 4, NOTE_G5, 8, NOTE_G5, 4, // "And magic makes it all complete"
