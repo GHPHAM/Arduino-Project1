@@ -2,12 +2,12 @@
 #define REST      0
 
 // change this to whichever pin you want to use
-byte buzzer = 9;
+const byte buzzer = 9;
 
 
-unsigned long previousMillis = 0;
-void myDelay(unsigned long ms) {
-  unsigned long start = millis();  // Get the current time in milliseconds
+unsigned int previousMillis = 0;
+void myDelay(unsigned int ms) {
+  unsigned int start = millis();  // Get the current time in milliseconds
   while (millis() - start < ms) {
     // You can do something else here if needed while waiting
   }
@@ -42,8 +42,8 @@ void setup() {
   pinMode(PrevButton, INPUT);
   pinMode(NextButton, INPUT);
 
-  bool PrevlastButton = digitalRead(PrevButton);
-  bool NextlastButton = digitalRead(NextButton);
+  PrevlastButton = digitalRead(PrevButton);
+  NextlastButton = digitalRead(NextButton);
   //bool PowerSwitchState = digitalRead(PowerSwitch);
 
   //pinMode(GLED, OUTPUT);
