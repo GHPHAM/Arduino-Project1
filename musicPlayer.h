@@ -13,7 +13,7 @@
 // a 4 means a quarter note, 8 an eighteenth , 16 sixteenth, so on
 // !!negative numbers are used to represent dotted notes,
 // so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
-const int NeverGonnaGiveYouUp[] = { //114
+const short int NeverGonnaGiveYouUp[] = { //114
   /* 
   Never Gonna Give you Up
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -95,7 +95,7 @@ const int NeverGonnaGiveYouUp[] = { //114
   */
 };
 
-const int TakeOnMe[] = { //140
+const short int TakeOnMe[] = { //140
   /* 
   Take on me
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -123,7 +123,7 @@ const int TakeOnMe[] = { //140
   */
 };
 
-const int MyLittlePony[] = {
+const short int MyLittlePony[] = {
   // Original piece arranged by Huy Pham
   
   // Allegretto (First phrase)
