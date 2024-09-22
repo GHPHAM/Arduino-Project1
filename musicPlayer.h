@@ -2,6 +2,8 @@
 // Huy Pham - 9/20/2024
 // Adapted from https://github.com/robsoncouto/arduino-songs
 
+// Unfortunately I have to truncate a lot of these musics since they will not fit the ram
+// I tried fitting it on the onboard memeory, but they will break
 
 /*///////////////////////////////////////////////
   MUSICS
@@ -11,7 +13,7 @@
 // a 4 means a quarter note, 8 an eighteenth , 16 sixteenth, so on
 // !!negative numbers are used to represent dotted notes,
 // so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
-int NeverGonnaGiveYouUp[] = { //114
+const int NeverGonnaGiveYouUp[] = { //114
   /* 
   Never Gonna Give you Up
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -31,9 +33,10 @@ int NeverGonnaGiveYouUp[] = { //114
   NOTE_E5,-4, NOTE_FS5,-4, NOTE_A5,16, NOTE_G5,16, NOTE_FS5,8,
   NOTE_D5,-4, NOTE_E5,-4, NOTE_A4,2,
   NOTE_A4,16, NOTE_A4,16, NOTE_B4,16, NOTE_D5,8, NOTE_D5,16,
+  /*
   REST,4, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_D5,8, NOTE_E5,8, NOTE_CS5,-8,
   NOTE_B4,16, NOTE_A4,2, REST,4, 
-
+  
   REST,8, NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,4, NOTE_A4,8, //7
   NOTE_A5,8, REST,8, NOTE_A5,8, NOTE_E5,-4, REST,4, 
   NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, NOTE_D5,8, NOTE_E5,8, REST,8,
@@ -89,9 +92,10 @@ int NeverGonnaGiveYouUp[] = { //114
   NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8, 
 
   NOTE_E5,4, NOTE_D5,2, REST,4
+  */
 };
 
-int TakeOnMe[] = { //140
+const int TakeOnMe[] = { //140
   /* 
   Take on me
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -108,19 +112,18 @@ int TakeOnMe[] = { //140
   NOTE_A5,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, REST,8, NOTE_D5,8, REST,8, NOTE_FS5,8, 
   REST,8, NOTE_FS5,8, REST,8, NOTE_FS5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8,
   NOTE_FS5,8, NOTE_FS5,8,NOTE_D5,8, NOTE_B4,8, REST,8, NOTE_B4,8, REST,8, NOTE_E5,8, 
-  
   REST,8, NOTE_E5,8, REST,8, NOTE_E5,8, NOTE_GS5,8, NOTE_GS5,8, NOTE_A5,8, NOTE_B5,8,
   NOTE_A5,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, REST,8, NOTE_D5,8, REST,8, NOTE_FS5,8, 
   REST,8, NOTE_FS5,8, REST,8, NOTE_FS5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8,
   NOTE_FS5,8, NOTE_FS5,8,NOTE_D5,8, NOTE_B4,8, REST,8, NOTE_B4,8, REST,8, NOTE_E5,8, 
   REST,8, NOTE_E5,8, REST,8, NOTE_E5,8, NOTE_GS5,8, NOTE_GS5,8, NOTE_A5,8, NOTE_B5,8,
-  
+  /*
   NOTE_A5,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, REST,8, NOTE_D5,8, REST,8, NOTE_FS5,8, 
   REST,8, NOTE_FS5,8, REST,8, NOTE_FS5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8,
-  
+  */
 };
 
-int MyLittlePony[] {
+const int MyLittlePony[] = {
   // Original piece arranged by Huy Pham
   
   // Allegretto (First phrase)
@@ -138,7 +141,7 @@ int MyLittlePony[] {
   NOTE_C5, 8, NOTE_D5, 8, NOTE_E5, 8, NOTE_G5, 4, NOTE_G5, 4, // "Until you all shared"
   NOTE_E5, 4, NOTE_D5, 4, NOTE_C5, 8, NOTE_E5, 4, NOTE_D5, 2, // "its magic with me"
   
-
+  /*
   // Fourth phrase
   NOTE_C5, 8, NOTE_C5, 8, NOTE_C5, 4, NOTE_C5, 4, // "Big adventures"
   NOTE_G5, 8, NOTE_A5, 4, NOTE_G5, -4, // "Tons of funs"
@@ -158,6 +161,7 @@ int MyLittlePony[] {
   // Seventh phrase
   NOTE_C5, 8, NOTE_D5, 8, NOTE_E5, 4, NOTE_C5, 8, NOTE_F5, 4, NOTE_E5, 4, NOTE_D5, 4, NOTE_C5, 4, NOTE_E5, 2,  // "Do you know you are my very best"
   NOTE_C5, 2, NOTE_B4, 2, NOTE_C5, 2, NOTE_D5, 2, NOTE_C5, 1,// "friends"
+  */
 };
 
 /*///////////////////////////////////////////////
@@ -197,7 +201,8 @@ void playMusic(int melody[], int notes, int tempo)
     tone(buzzer, melody[thisNote], noteDuration * 0.9);
 
     // Wait for the specief duration before playing the next note.
-    delay(noteDuration);
+    //delay(noteDuration);
+    myDelay(noteDuration);
 
     // stop the waveform generation before the next note.
     noTone(buzzer);
@@ -207,7 +212,7 @@ void playMusic(int melody[], int notes, int tempo)
 }
 
 // Selecting which array to run
-void selectMusic(int index, int pin = 11) // LED pin default to 11
+void selectMusic(byte index) // LED pin default to 11
 {
   if (!isPlayingMusic) // If currently is not playing music
   {
