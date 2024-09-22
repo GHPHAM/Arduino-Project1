@@ -173,7 +173,7 @@ bool isPlayingMusic = false; // Vanguard to make sure we don't overlap
 // Passing the array into the music player function
 // Notes are actually x2, but because we increment +2, it's halved.
 // arg1 = music array, arg2 = notes * 2, args3 = song tempo
-void playMusic(int melody[], int notes, int tempo)
+void playMusic(int melody[], unsigned short int notes, unsigned short int tempo)
 {
   isPlayingMusic = true; // Locking the program to only play one song at a time
 
