@@ -13,7 +13,7 @@
 // a 4 means a quarter note, 8 an eighteenth , 16 sixteenth, so on
 // !!negative numbers are used to represent dotted notes,
 // so -4 means a dotted quarter note, that is, a quarter plus an eighteenth!!
-const short int NeverGonnaGiveYouUp[] = { //114
+const int NeverGonnaGiveYouUp[] = { //114
   /* 
   Never Gonna Give you Up
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -33,69 +33,9 @@ const short int NeverGonnaGiveYouUp[] = { //114
   NOTE_E5,-4, NOTE_FS5,-4, NOTE_A5,16, NOTE_G5,16, NOTE_FS5,8,
   NOTE_D5,-4, NOTE_E5,-4, NOTE_A4,2,
   NOTE_A4,16, NOTE_A4,16, NOTE_B4,16, NOTE_D5,8, NOTE_D5,16,
-  /*
-  REST,4, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_D5,8, NOTE_E5,8, NOTE_CS5,-8,
-  NOTE_B4,16, NOTE_A4,2, REST,4, 
-  
-  REST,8, NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,4, NOTE_A4,8, //7
-  NOTE_A5,8, REST,8, NOTE_A5,8, NOTE_E5,-4, REST,4, 
-  NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, NOTE_D5,8, NOTE_E5,8, REST,8,
-  REST,8, NOTE_CS5,8, NOTE_B4,8, NOTE_A4,-4, REST,4,
-  REST,8, NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, NOTE_A4,4,
-  NOTE_E5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,4, REST,4,
-   
-  NOTE_D5,2, NOTE_E5,8, NOTE_FS5,8, NOTE_D5,8, //13
-  NOTE_E5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,4, NOTE_A4,4,
-  REST,2, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8,
-  REST,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-
-  NOTE_E5,-8, NOTE_E5,-8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,-8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16, //18
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,8, NOTE_A4,8, NOTE_A4,8, 
-  NOTE_E5,4, NOTE_D5,2, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_A5,4, NOTE_CS5,8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8,  //23
-  NOTE_E5,4, NOTE_D5,2, REST,4,
-  REST,8, NOTE_B4,8, NOTE_D5,8, NOTE_B4,8, NOTE_D5,8, NOTE_E5,4, REST,8,
-  REST,8, NOTE_CS5,8, NOTE_B4,8, NOTE_A4,-4, REST,4,
-  REST,8, NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, NOTE_A4,4,
-  REST,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8, NOTE_D5,8,
-  
-  REST,8, NOTE_A4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, //29
-  REST,8, NOTE_CS5,8, NOTE_B4,8, NOTE_A4,-4, REST,4,
-  NOTE_B4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, NOTE_A4,4, REST,8,
-  REST,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,4, NOTE_E5,-4, 
-  NOTE_D5,2, NOTE_D5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,4, 
-  NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8, NOTE_A4,8, NOTE_A4,4,
-
-  REST,-4, NOTE_A4,8, NOTE_B4,8, NOTE_CS5,8, NOTE_D5,8, NOTE_B4,8, //35
-  REST,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_E5,-8, NOTE_E5,-8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8, 
-
-   NOTE_E5,4, NOTE_D5,2, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16, //40
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_A5,4, NOTE_CS5,8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8,  
-  NOTE_E5,4, NOTE_D5,2, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-   
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16, //45
-  NOTE_A5,4, NOTE_CS5,8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8,  
-  NOTE_E5,4, NOTE_D5,2, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_FS5,-8, NOTE_FS5,-8, NOTE_E5,-4, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16, //45
-  
-  NOTE_A5,4, NOTE_CS5,8, NOTE_D5,-8, NOTE_CS5,16, NOTE_B4,8, NOTE_A4,16, NOTE_B4,16, NOTE_D5,16, NOTE_B4,16,
-  NOTE_D5,4, NOTE_E5,8, NOTE_CS5,-8, NOTE_B4,16, NOTE_A4,4, NOTE_A4,8, 
-
-  NOTE_E5,4, NOTE_D5,2, REST,4
-  */
 };
 
-const short int TakeOnMe[] = { //140
+const int TakeOnMe[] = { //140
   /* 
   Take on me
   Connect a piezo buzzer or speaker to pin 11 or select a new pin.
@@ -115,15 +55,9 @@ const short int TakeOnMe[] = { //140
   REST,8, NOTE_E5,8, REST,8, NOTE_E5,8, NOTE_GS5,8, NOTE_GS5,8, NOTE_A5,8, NOTE_B5,8,
   NOTE_A5,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, REST,8, NOTE_D5,8, REST,8, NOTE_FS5,8, 
   REST,8, NOTE_FS5,8, REST,8, NOTE_FS5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8,
-  NOTE_FS5,8, NOTE_FS5,8,NOTE_D5,8, NOTE_B4,8, REST,8, NOTE_B4,8, REST,8, NOTE_E5,8, 
-  REST,8, NOTE_E5,8, REST,8, NOTE_E5,8, NOTE_GS5,8, NOTE_GS5,8, NOTE_A5,8, NOTE_B5,8,
-  /*
-  NOTE_A5,8, NOTE_A5,8, NOTE_A5,8, NOTE_E5,8, REST,8, NOTE_D5,8, REST,8, NOTE_FS5,8, 
-  REST,8, NOTE_FS5,8, REST,8, NOTE_FS5,8, NOTE_E5,8, NOTE_E5,8, NOTE_FS5,8, NOTE_E5,8,
-  */
 };
 
-const short int MyLittlePony[] = {
+const int MyLittlePony[] = {
   // Original piece arranged by Huy Pham
   
   // Allegretto (First phrase)
@@ -140,28 +74,7 @@ const short int MyLittlePony[] = {
   NOTE_C5, 2, NOTE_B4, 8, NOTE_C5, 4, NOTE_D5, 4, NOTE_C5, 2, // "My little po-ny"
   NOTE_C5, 8, NOTE_D5, 8, NOTE_E5, 8, NOTE_G5, 4, NOTE_G5, 4, // "Until you all shared"
   NOTE_E5, 4, NOTE_D5, 4, NOTE_C5, 8, NOTE_E5, 4, NOTE_D5, 2, // "its magic with me"
-  
-  /*
-  // Fourth phrase
-  NOTE_C5, 8, NOTE_C5, 8, NOTE_C5, 4, NOTE_C5, 4, // "Big adventures"
-  NOTE_G5, 8, NOTE_A5, 4, NOTE_G5, -4, // "Tons of funs"
-  NOTE_C5, 8, NOTE_D5, 8, NOTE_D5, 8, NOTE_D5, 4, NOTE_D5, 4, // "A beautiful heart"
-  NOTE_D5, 4, NOTE_D5, 8, NOTE_E5, 4, NOTE_D5, -2, // "Faithful and strong"
-  
 
-  // Fifth phrase
-  NOTE_C5, 8, NOTE_D5, 4, NOTE_E5, 4, NOTE_C5, 8, // "Sharing kindness"
-  NOTE_C5, 8, NOTE_C5, 8, NOTE_G5, 8, NOTE_A5, 4, NOTE_G5, -4, // "It's an easy feat"
-  
-  
-  // Sixth phrase
-  NOTE_C5, 4, NOTE_D5, 4, NOTE_D5, 4, NOTE_D5, 4, NOTE_E5, 4, NOTE_A5, 4, NOTE_G5, 8, NOTE_G5, 4, // "And magic makes it all complete"
-  NOTE_E5, 8, NOTE_F5, 4, NOTE_C5, 2, NOTE_B4, 8, NOTE_C5, 4, NOTE_D5, 4, NOTE_C5, -2, // "You have My Little Pony"
-  
-  // Seventh phrase
-  NOTE_C5, 8, NOTE_D5, 8, NOTE_E5, 4, NOTE_C5, 8, NOTE_F5, 4, NOTE_E5, 4, NOTE_D5, 4, NOTE_C5, 4, NOTE_E5, 2,  // "Do you know you are my very best"
-  NOTE_C5, 2, NOTE_B4, 2, NOTE_C5, 2, NOTE_D5, 2, NOTE_C5, 1,// "friends"
-  */
 };
 
 /*///////////////////////////////////////////////
@@ -169,53 +82,63 @@ const short int MyLittlePony[] = {
 *////////////////////////////////////////////////
 
 bool isPlayingMusic = false; // Vanguard to make sure we don't overlap
+bool isChangingMusic = false;
+unsigned long noteStartMillis = 0;
+int currentNote = 0;
+int noteDuration = 0;
 
 // Passing the array into the music player function
 // Notes are actually x2, but because we increment +2, it's halved.
 // arg1 = music array, arg2 = notes * 2, args3 = song tempo
-void playMusic(int melody[], unsigned short int notes, unsigned short int tempo)
-{
-  isPlayingMusic = true; // Locking the program to only play one song at a time
 
+void playNextNote(int melody[], unsigned int notes, unsigned int tempo) {
   // this calculates the duration of a whole note in ms
-  int wholenote = (60000 * 4) / tempo;
+  unsigned int wholenote = (60000 * 4) / tempo;
 
-  int divider = 0, noteDuration = 0;
-
-  // iterate over the notes of the melody.
-  // Remember, the array is twice the number of notes (notes + durations)
-  for (int thisNote = 0; thisNote < notes; thisNote = thisNote + 2) {
-
-    // calculates the duration of each note
-    divider = melody[thisNote + 1];
-    if (divider > 0) {
-      // regular note, just proceed
-      noteDuration = (wholenote) / divider;
-    } else if (divider < 0) {
-      // dotted notes are represented with negative durations!!
-      noteDuration = (wholenote) / abs(divider);
-      noteDuration *= 1.5; // increases the duration in half for dotted notes
-    }
-
-    // we only play the note for 90% of the duration, leaving 10% as a pause
-    tone(buzzer, melody[thisNote], noteDuration * 0.9);
-
-    // Wait for the specief duration before playing the next note.
-    //delay(noteDuration);
-    myDelay(noteDuration);
-
-    // stop the waveform generation before the next note.
-    noTone(buzzer);
+  // calculates the duration of each note
+  int divider = melody[currentNote + 1];
+  if (divider > 0) {
+    // regular note
+    noteDuration = (wholenote) / divider;
+  } else if (divider < 0) {
+    // dotted note
+    noteDuration = (wholenote) / abs(divider);
+    noteDuration *= 1.5;
   }
 
-  isPlayingMusic = false;
+  // Play the note
+  tone(buzzer, melody[currentNote], noteDuration * 0.9);
+
+  // Start timer for this note
+  noteStartMillis = millis();
+  currentNote += 2; // Move to the next note in the array
+}
+
+void playMusic(int melody[], unsigned int notes, unsigned int tempo)
+{
+  if (!isPlayingMusic || isChangingMusic) {
+    currentNote = 0;
+    isPlayingMusic = true;
+    playNextNote(melody, notes, tempo);
+  }
+
+  if (currentNote >= notes) {
+    // Music finished
+    isPlayingMusic = false;
+    noTone(buzzer);
+    return;
+  }
+
+  // If it's time for the next note
+  if (millis() - noteStartMillis >= noteDuration) {
+    noTone(buzzer);  // Stop the current note
+    playNextNote(melody, notes, tempo);
+  }
 }
 
 // Selecting which array to run
 void selectMusic(byte index) // LED pin default to 11
 {
-  if (!isPlayingMusic) // If currently is not playing music
-  {
     switch(index)
     {
       case 0: // Nothing's playing
@@ -235,5 +158,4 @@ void selectMusic(byte index) // LED pin default to 11
       
       // ADD MORE SONGS HERE
     }
-  }
 }

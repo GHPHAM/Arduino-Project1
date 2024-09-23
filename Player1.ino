@@ -4,16 +4,6 @@
 // change this to whichever pin you want to use
 const byte buzzer = 9;
 
-
-unsigned int previousMillis = 0;
-void myDelay(unsigned int ms) {
-  unsigned int start = millis();  // Get the current time in milliseconds
-  while (millis() - start < ms) {
-    // You can do something else here if needed while waiting
-  }
-}
-
-
 // musicPlayer.h
 // Huy Pham - 9/20/2024
 #include "musicPlayer.h"
@@ -32,6 +22,7 @@ const byte NextButton = 3;
 const byte GLED = 10; // Red light
 
 byte index = 0; // Currently at 0 (no song is playing)
+byte prevIndex = 0;
 const byte maxIndex = 3; // Set up max index to fit the number of musics we have (currently 3)
 
 
@@ -49,8 +40,6 @@ void setup() {
   //pinMode(GLED, OUTPUT);
 }
 
-byte prevIndex = 0;
-
 
 
 bool debounce(bool last, byte BUTTON)
@@ -65,6 +54,8 @@ bool debounce(bool last, byte BUTTON)
 }
 
 void loop() {
+  isChangingMusic = false;
+  
   PrevcurrentButton = debounce(PrevlastButton, PrevButton);
   //PrevcurrentButton = digitalRead(PrevButton);
   if (PrevcurrentButton == HIGH && PrevlastButton == LOW) // Going back
@@ -91,9 +82,25 @@ void loop() {
   // Debugger
   if (prevIndex != index)
   {
+    isChangingMusic = true;
     prevIndex = index;
     Serial.print(F("Index: "));
     Serial.println(index);
     selectMusic(index);
+  }
+
+  //
+  if (isPlayingMusic) {
+    switch (index) {
+      case 1:
+        playMusic(NeverGonnaGiveYouUp, sizeof(NeverGonnaGiveYouUp) / sizeof(NeverGonnaGiveYouUp[0]), 114);
+        break;
+      case 2:
+        playMusic(TakeOnMe, sizeof(TakeOnMe) / sizeof(TakeOnMe[0]), 140);
+        break;
+      case 3:
+        playMusic(MyLittlePony, sizeof(MyLittlePony) / sizeof(MyLittlePony[0]), 140);
+        break;
+    }
   }
 }
