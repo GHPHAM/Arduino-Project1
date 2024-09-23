@@ -89,18 +89,8 @@ void loop() {
     selectMusic(index);
   }
 
-  //
+  // Continue
   if (isPlayingMusic) {
-    switch (index) {
-      case 1:
-        playMusic(NeverGonnaGiveYouUp, sizeof(NeverGonnaGiveYouUp) / sizeof(NeverGonnaGiveYouUp[0]), 114);
-        break;
-      case 2:
-        playMusic(TakeOnMe, sizeof(TakeOnMe) / sizeof(TakeOnMe[0]), 140);
-        break;
-      case 3:
-        playMusic(MyLittlePony, sizeof(MyLittlePony) / sizeof(MyLittlePony[0]), 140);
-        break;
-    }
+    selectMusic(index);
   }
 }
