@@ -1,9 +1,10 @@
-/*
+/*////////////////////////////////////////////////
 Project one: Music Player
 The music player allows you to select from a range of pre-installed tunes.
 More information and source code: https://github.com/GHPHAM/Arduino-Project1/
 
-*/
+*/////////////////////////////////////////////////
+
 // System integration by Huy Pham
 // Put your name here if you integrated something yourself.
 
@@ -12,23 +13,30 @@ More information and source code: https://github.com/GHPHAM/Arduino-Project1/
 
 // change this to whichever pin you want to use
 const byte buzzer = 9;
+const byte PrevButton = 2;
+const byte NextButton = 3;
+//const byte GLED = 10; // Red light
 
+// music.h
 // musicPlayer.h
 // Huy Pham - 9/20/2024
+#include "music.h"
 #include "musicPlayer.h"
 
+// pitchLED.h
+// Van Lai Sy - 9/25/2024
+//#include "pitchLED.h"
+
+// nightLight.h
+// Adrian Miranda - 9/../2024
+//#include "nightLight.h"
+
+
+// INITIALIZING GLOBAL VARIABLES
 bool PrevlastButton = LOW;
 bool PrevcurrentButton = LOW;
 bool NextlastButton = LOW;
 bool NextcurrentButton = LOW;
-
-const byte PrevButton = 2;
-const byte NextButton = 3;
-
-//bool PowerSwitchState = LOW;
-//const byte PowerSwitch = 4;
-
-const byte GLED = 10; // Red light
 
 byte index = 0; // Currently at 0 (no song is playing)
 byte prevIndex = 0;
@@ -44,9 +52,6 @@ void setup() {
 
   PrevlastButton = digitalRead(PrevButton);
   NextlastButton = digitalRead(NextButton);
-  //bool PowerSwitchState = digitalRead(PowerSwitch);
-
-  //pinMode(GLED, OUTPUT);
 }
 
 
