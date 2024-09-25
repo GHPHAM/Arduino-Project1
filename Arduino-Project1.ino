@@ -1,3 +1,12 @@
+/*
+Project one: Music Player
+The music player allows you to select from a range of pre-installed tunes.
+More information and source code: https://github.com/GHPHAM/Arduino-Project1/
+
+*/
+// System integration by Huy Pham
+// Put your name here if you integrated something yourself.
+
 #include "pitches.h"
 #define REST      0
 
