@@ -91,6 +91,10 @@ void selectMusic(byte index) // LED pin default to 11
       case 3:
       playMusic(MyLittlePony, sizeof(MyLittlePony) / sizeof(MyLittlePony[0]), 140);
       break;
+
+      case 4:
+      playMusic(odeToJoy, sizeof(odeToJoy) / sizeof(odeToJoy[0]), 114);
+      break;
       
       // ADD MORE SONGS HERE
     }
