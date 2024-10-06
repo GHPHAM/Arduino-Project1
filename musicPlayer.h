@@ -36,6 +36,9 @@ void playNextNote(int melody[], unsigned int notes, unsigned int tempo) {
     noteDuration *= 1.5;
   }
 
+  // Display LED
+  PitchLED(melody[currentNote], RLED);
+
   // Play the note
   tone(buzzer, melody[currentNote], noteDuration * 0.9);
 
@@ -56,6 +59,9 @@ void playMusic(int melody[], unsigned int notes, unsigned int tempo)
     // Music finished
     isPlayingMusic = false;
     noTone(buzzer);
+
+    // Restart LED back to 0
+    restartLED(RLED);
     return;
   }
 

@@ -8,6 +8,7 @@ More information and source code: https://github.com/GHPHAM/Arduino-Project1/
 // System integration by Huy Pham
 // Put your name here if you integrated something yourself.
 
+//#include <cmath>
 #include "pitches.h"
 #define REST      0
 
@@ -15,7 +16,11 @@ More information and source code: https://github.com/GHPHAM/Arduino-Project1/
 const byte buzzer = 9;
 const byte PrevButton = 2;
 const byte NextButton = 3;
-//const byte GLED = 10; // Red light
+const byte RLED = 7; // Red light
+
+// pitchLED.h
+// Van Lai Sy - 9/25/2024
+#include "pitchLED.h"
 
 // music.h
 // musicPlayer.h
@@ -23,13 +28,10 @@ const byte NextButton = 3;
 #include "music.h"
 #include "musicPlayer.h"
 
-// pitchLED.h
-// Van Lai Sy - 9/25/2024
-//#include "pitchLED.h"
-
 // nightLight.h
-// Adrian Miranda - 9/../2024
+// Adrian Miranda - 10/2/2024
 //#include "nightLight.h"
+#include "nightlight.h"
 
 
 // INITIALIZING GLOBAL VARIABLES
@@ -45,6 +47,7 @@ const byte maxIndex = 3; // Set up max index to fit the number of musics we have
 
 
 void setup() {
+  
   Serial.begin(9600); //Start Serial Communication
 
   pinMode(PrevButton, INPUT);
@@ -68,6 +71,8 @@ bool debounce(bool last, byte BUTTON)
 }
 
 void loop() {
+  lightLoop();
+
   isChangingMusic = false;
   
   PrevcurrentButton = debounce(PrevlastButton, PrevButton);
