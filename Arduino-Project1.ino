@@ -42,7 +42,7 @@ bool NextcurrentButton = LOW;
 
 byte index = 0; // Currently at 0 (no song is playing)
 byte prevIndex = 0;
-const byte maxIndex = 3; // Set up max index to fit the number of musics we have (currently 3)
+const byte maxIndex = 4; // Set up max index to fit the number of musics we have (currently 3)
 
 
 
