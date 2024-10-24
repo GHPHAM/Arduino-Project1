@@ -1,0 +1,13 @@
+2024-10-08 18:01:38 New Player Entry: Huy Pham
+2024-10-08 18:01:38 Huy Pham chose Bagel
+2024-10-08 18:01:38 Huy Pham chose Rock Paper Scissor
+2024-10-08 18:01:38 Huy Pham chose The Game 21
+2024-10-08 18:01:38 Huy Pham chose Bagel
+2024-10-08 18:01:38 Huy Pham chose Rock Paper Scissor
+2024-10-08 18:01:38 Huy Pham chose The Game 21
+2024-10-08 18:01:38 Huy Pham's stat: Win: 4, Loss: 2
+2024-10-08 18:01:38 New Player Entry: John Doe
+2024-10-08 18:01:38 John Doe chose Bagel
+2024-10-08 18:01:38 John Doe chose Rock Paper Scissor
+2024-10-08 18:01:38 John Doe chose The Game 21
+2024-10-08 18:01:38 John Doe's stat: Win: 0, Loss: 3
